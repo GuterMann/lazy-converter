@@ -1,6 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { NxWelcome } from './nx-welcome';
+import { initFlowbite } from 'flowbite';
+
 
 @Component({
   imports: [NxWelcome, RouterModule],
@@ -8,6 +10,9 @@ import { NxWelcome } from './nx-welcome';
   templateUrl: './app.html',
   styleUrl: './app.css',
 })
-export class App {
+export class App implements OnInit{
+  ngOnInit(): void {
+    initFlowbite();
+  }
   protected title = 'lazy-converter';
 }
