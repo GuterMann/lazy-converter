@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { NxWelcome } from './nx-welcome';
 import { initFlowbite } from 'flowbite';
+import { MainLayoutWithSidebar } from "./shell/main-layout-with-sidebar/main-layout-with-sidebar";
 
 
 @Component({
-  imports: [NxWelcome, RouterModule],
+  imports: [RouterModule, MainLayoutWithSidebar],
   selector: 'app-root',
   templateUrl: './app.html',
   styleUrl: './app.css',
