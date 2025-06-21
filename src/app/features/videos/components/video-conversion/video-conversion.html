@@ -1,49 +1,53 @@
 <div class="p-4 bg-gray-100 min-h-screen rounded-lg">
-    <!-- Toolbar -->
-    <div class="flex flex-wrap gap-2 items-center mb-4">
-      <button
-        class="flex items-center px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded hover:bg-blue-700"
-      >
-        <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
-          <path
-            d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z"
-          />
-        </svg>
-        Videos hinzufügen
-      </button>
+  <!-- Toolbar -->
+  <div class="flex flex-wrap gap-2 items-center mb-4">
+    <button
+      class="flex items-center px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded hover:bg-blue-700"
+    >
+      <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+        <path
+          d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z"
+        />
+      </svg>
+      Videos hinzufügen
+    </button>
 
-      <select
-        id="format"
-        class="px-4 py-2 text-sm border border-gray-300 rounded"
-      >
-        <option selected>MP4</option>
-        <option>AVI</option>
-        <option>MOV</option>
-      </select>
+    <select
+      id="format"
+      class="px-4 py-2 text-sm border border-gray-300 rounded"
+    >
+      <option selected>MP3</option>
+      <option>FLAC</option>
+      <option>AMV</option>
+    </select>
 
-      <button
-        class="px-4 py-2 text-sm font-medium text-white bg-emerald-600 rounded hover:bg-emerald-700"
-      >
-        Auswahl konvertieren
-      </button>
+    <button
+      class="px-4 py-2 text-sm font-medium text-white bg-emerald-600 rounded hover:bg-emerald-700"
+    >
+      Auswahl konvertieren
+    </button>
 
-      <button
-        class="px-4 py-2 text-sm font-medium text-white bg-red-600 rounded hover:bg-red-700"
-      >
-        Auswahl entfernen
-      </button>
+    <button
+      class="px-4 py-2 text-sm font-medium text-white bg-red-600 rounded hover:bg-red-700"
+    >
+      Auswahl entfernen
+    </button>
 
-      <button
-        type="button"
-        class="flex items-center px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-lg hover:bg-blue-700 focus:ring-4 focus:ring-blue-300 dark:bg-blue-500 dark:hover:bg-blue-600 dark:focus:ring-blue-800"
-      >
-        <i class="fas fa-cog mr-2"></i>
-        Einstellungen
-      </button>
-    </div>
+    <button
+      type="button"
+      class="flex items-center px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-lg hover:bg-blue-700 focus:ring-4 focus:ring-blue-300 dark:bg-blue-500 dark:hover:bg-blue-600 dark:focus:ring-blue-800"
+    >
+      <i class="fas fa-cog mr-2"></i>
+      Einstellungen
+    </button>
+  </div>
 
-    <!-- Destination Folder Selection -->
-    <div class="flex items-center w-full gap-2 mb-4">
+  <!-- Destination Folder Selection -->
+  <div class="flex items-center w-full gap-2 mb-4">
+    <form
+      [formGroup]="destinationFolderForm"
+      class="flex items-center w-full gap-2 mb-4"
+    >
       <label
         for="destination"
         class="text-sm font-medium text-gray-700 dark:text-gray-300 whitespace-nowrap"
@@ -54,83 +58,82 @@
       <input
         type="text"
         id="destination"
+        formControlName="path"
         class="flex-1 px-4 py-2 text-sm border border-blue-500 rounded focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
         placeholder="Wähle einen Zielordner aus..."
         readonly
       />
-
       <button
         class="shrink-0 px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded hover:bg-blue-700"
       >
         Ordner wählen
       </button>
-    </div>
-
-    <!-- Table -->
-    <div class="overflow-x-auto">
-      <table
-        class="min-w-full text-sm text-left text-gray-700 bg-white border rounded shadow"
-      >
-        <thead class="text-xs text-gray-600 bg-gray-200 uppercase">
-          <tr>
-            <th class="p-3"><input type="checkbox" /></th>
-            <th class="p-3">Sn</th>
-            <th class="p-3">Thumbnail</th>
-            <th class="p-3">Title</th>
-            <th class="p-3">Length</th>
-            <th class="p-3">Size</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr class="border-t">
-            <td class="p-3"><input type="checkbox" checked /></td>
-            <td class="p-3">3</td>
-            <td class="p-3">
-              <img
-                src="https://via.placeholder.com/80x45"
-                class="w-20 h-auto rounded"
-                alt="Thumbnail"
-              />
-            </td>
-            <td class="p-3">elderbrook numb official video.mp4</td>
-            <td class="p-3">03m:51s</td>
-            <td class="p-3">36.33 MB</td>
-          </tr>
-          <tr class="border-t">
-            <td class="p-3"><input type="checkbox" checked /></td>
-            <td class="p-3">4</td>
-            <td class="p-3">
-              <img
-                src="https://via.placeholder.com/80x45"
-                class="w-20 h-auto rounded"
-                alt="Thumbnail"
-              />
-            </td>
-            <td class="p-3">
-              dharia sugar brownies by monoir official video.mp4
-            </td>
-            <td class="p-3">03m:31s</td>
-            <td class="p-3">22.76 MB</td>
-          </tr>
-          <tr class="border-t">
-            <td class="p-3"><input type="checkbox" checked /></td>
-            <td class="p-3">5</td>
-            <td class="p-3">
-              <img
-                src="https://via.placeholder.com/80x45"
-                class="w-20 h-auto rounded"
-                alt="Thumbnail"
-              />
-            </td>
-            <td class="p-3">
-              comfortably numb pink floyd the wall 4k remastered.mp4
-            </td>
-            <td class="p-3">06m:33s</td>
-            <td class="p-3">56.15 MB</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <div class="mt-4 text-right text-sm text-gray-600">3/5 Selected</div>
+    </form>
   </div>
+
+  <!-- Table -->
+  <div class="overflow-x-auto">
+    <table
+      class="min-w-full text-sm text-left text-gray-700 bg-white border rounded shadow"
+    >
+      <thead class="text-xs text-gray-600 bg-gray-200 uppercase">
+        <tr>
+          <th class="p-3"><input type="checkbox" /></th>
+          <th class="p-3">Sn</th>
+          <th class="p-3">Thumbnail</th>
+          <th class="p-3">Title</th>
+          <th class="p-3">Length</th>
+          <th class="p-3">Size</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="border-t">
+          <td class="p-3"><input type="checkbox" checked /></td>
+          <td class="p-3">3</td>
+          <td class="p-3">
+            <img
+              src="https://via.placeholder.com/80x45"
+              class="w-20 h-auto rounded"
+              alt="Thumbnail"
+            />
+          </td>
+          <td class="p-3">elderbrook numb official video.mp4</td>
+          <td class="p-3">03m:51s</td>
+          <td class="p-3">36.33 MB</td>
+        </tr>
+        <tr class="border-t">
+          <td class="p-3"><input type="checkbox" checked /></td>
+          <td class="p-3">4</td>
+          <td class="p-3">
+            <img
+              src="https://via.placeholder.com/80x45"
+              class="w-20 h-auto rounded"
+              alt="Thumbnail"
+            />
+          </td>
+          <td class="p-3">
+            dharia sugar brownies by monoir official video.mp4
+          </td>
+          <td class="p-3">03m:31s</td>
+          <td class="p-3">22.76 MB</td>
+        </tr>
+        <tr class="border-t">
+          <td class="p-3"><input type="checkbox" checked /></td>
+          <td class="p-3">5</td>
+          <td class="p-3">
+            <img
+              src="https://via.placeholder.com/80x45"
+              class="w-20 h-auto rounded"
+              alt="Thumbnail"
+            />
+          </td>
+          <td class="p-3">
+            comfortably numb pink floyd the wall 4k remastered.mp4
+          </td>
+          <td class="p-3">06m:33s</td>
+          <td class="p-3">56.15 MB</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

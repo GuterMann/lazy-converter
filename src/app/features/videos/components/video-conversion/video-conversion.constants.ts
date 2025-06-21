@@ -1,0 +1,1 @@
+export type AudioType = 'MP3' | 'AMV' | 'FLAC';
