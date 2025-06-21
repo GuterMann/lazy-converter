@@ -3,10 +3,11 @@ import { CommonModule } from '@angular/common';
 import { initFlowbite } from 'flowbite';
 import { Sidebar } from "../features/sidebar/sidebar";
 import { MatTabsModule } from '@angular/material/tabs';
+import { Videos } from "../../features/videos/videos";
 
 @Component({
   selector: 'app-main-layout-with-sidebar',
-  imports: [CommonModule, Sidebar, MatTabsModule ],
+  imports: [CommonModule, Sidebar, MatTabsModule, Videos],
   templateUrl: './main-layout-with-sidebar.html',
   styleUrl: './main-layout-with-sidebar.css',
 })

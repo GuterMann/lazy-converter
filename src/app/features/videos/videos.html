@@ -1,0 +1,27 @@
+<mat-tab-group mat-stretch-tabs>
+  <!-- Tab 1: Conversion -->
+  <mat-tab>
+    <ng-template mat-tab-label>
+      <div class="flex items-center gap-2 text-blue-600 font-semibold">
+        <i class="fa fa-exchange" aria-hidden="true"></i>
+        <span>Konvertierung</span>
+      </div>
+    </ng-template>
+
+    <app-video-conversion></app-video-conversion>
+  </mat-tab>
+
+  <!-- Tab 2: Scripts -->
+  <mat-tab>
+    <ng-template mat-tab-label>
+      <div class="flex items-center gap-2 text-blue-600 font-semibold">
+        <i class="fa-solid fa-code"></i>
+        <span>Skripte generieren</span>
+      </div>
+    </ng-template>
+
+    <div class="p-4 bg-gray-100 min-h-screen rounded-lg">
+      <p class="text-gray-500 text-sm">Einstellungen werden hier angezeigt...</p>
+    </div>
+  </mat-tab>
+</mat-tab-group>
